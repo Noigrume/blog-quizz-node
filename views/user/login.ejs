@@ -1,0 +1,23 @@
+
+<main id="connect" role="main">
+
+
+    <% if (error) { %>
+        <p><%= error %></p>
+    <% } %>
+    <form action="/auth/login" method="post">
+        <legend>Login</legend>
+        <label for="alias">
+            <input type="text" name="alias" id="alias" placeholder="your name" aria-placeholder="your name">
+        </label>
+        <label for="pwd">
+            <input type="password" name="pwd" id="pwd" placeholder="your password" aria-placeholder="your password" autocomplete="off">
+        </label>
+
+        <input type="submit" value="send">
+
+    </form>
+    <a href="/auth/register">Or register</a>
+
+
+</main>

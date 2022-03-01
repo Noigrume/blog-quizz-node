@@ -1,0 +1,57 @@
+
+<main class="container">
+    <% for (const { index, title, description, date, picture } of articles) { %>
+   
+        <article class="blog-post col-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-primary">Categorie</strong>
+                <span id="delete" data-id="<%= index %>"><i class="fas fa-trash"></i></span>
+
+                <h3 class="mb-0"><%= title %></h3>
+                <div class="mb-1 text-muted"><%= date %></div>
+                <p class="card-text mb-auto"><%= description %></p>
+ 
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+      
+              </div>
+            </div>
+        </article>
+
+        <!-- <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+            <div class="card-header"><%= title %></div>
+            <div class="card-body">
+              <h4 class="card-title"><%= title %></h4>
+              <p class="card-text"><%= description %></p>
+            </div> -->
+
+<!--      
+        <div class="kittenCtn">
+            <div class="mod">
+                <span
+                    id="update"
+                    data-id="<%= index %>"
+                    data-name="<%= title %>"
+                    data-age="<%= date %>"
+                    data-picture="<%= picture %>"
+                    ><i class="fas fa-edit"></i
+                ></span>
+
+                <span id="delete" data-id="<%= index %>"
+                    ><i class="fas fa-trash"></i
+                ></span>
+            </div>
+            <a href="/articles/<%= index %>">
+                <ul>
+                    <li><%= title %></li>
+                    <li><%= date %> an(s)</li>
+
+                </ul>
+                <img src="../images/<%= picture %>" alt="" />
+            </a>
+        </div> -->
+
+    <%}%>
+</main>

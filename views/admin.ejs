@@ -1,0 +1,23 @@
+<main id="admin" role="main">
+    <section>
+        
+        <h2>Ajouter un article</h2>
+
+        <form action="/articles/save" method="POST">
+            <label for="title">titre :</label>
+            <input type="text" name="title" id="title" />
+
+            <label for="description">Description:</label>
+
+<textarea id="description" name="description"
+          >
+
+</textarea>
+            <label for="date">Date :</label>
+            <input type="date"  name="date" id="date" />
+
+
+            <input type="submit" value="send" />
+        </form>
+    </section>
+</main>

@@ -1,0 +1,22 @@
+<header>
+      <div class="nav-scroller mb-2 position-sticky">
+        <nav class="p-3 nav d-flex justify-content-between bg-dark position-sticky" style="top: 2rem;">
+          <a href="/" class="p-2 link-secondary <%= template === 'home' ? "active" : null %>">home</a>
+          <a href="/articles/all" class="p-2 link-secondary <%= template === 'list' ? "active" : null %>">list</a>
+          <% if(alias) { %>
+              <a href="/admin" class="p-2 link-secondary <%= template === 'admin' ? "active" : null %>">admin</a>
+              <a href="/auth/logout" class="p-2 link-secondary <%= template === 'user/connect' ? "active" : null %>">logout</a>
+          <% } %>
+          <% if(!alias) { %>
+              <a href="/auth/login" class="p-2 link-secondary <%= template === 'user/connect' ? "active" : null %>">login</a>
+              <a href="/auth/register">Register</a>
+          <% } %>
+          <p>
+              <% if (alias) { %>
+                  <p>Salut <%= alias %> </p>
+              <% } %>
+          </p>
+        </nav>
+      </div>
+    </div>
+</header>
