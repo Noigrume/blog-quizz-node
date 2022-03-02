@@ -1,17 +1,21 @@
 import pkg from 'mongoose';
-const {Schema, model} = pkg;
+const { Schema, model } = pkg;
 
 const ArticleSchema = Schema(
     {
         index: Number,
-        // name: { type: String, minlength: 2, required: true },
-        // age: { type: Number, required: true },
-        // picture: {type: String, default: "no-picture.png"},
-        // available: { type: Boolean, required: true },
         title: { type: String, minlength: 2, required: true },
-        date: { type: Date, required: true },
-        picture: {type: String, default: "no-picture.png"},
+        date: { type: Date, default: Date.now() },
+        picture: { type: String, default: "no-picture.png" },
         description: { type: String, required: true },
+        user_id: {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        },
+        related_quizz: [{
+            type: Schema.Types.ObjectId,
+            ref: 'QuizzEvaluation'
+         }]
     },
     { timestamps: true }
 );

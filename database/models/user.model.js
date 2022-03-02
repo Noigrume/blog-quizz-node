@@ -7,6 +7,10 @@ const UserSchema = Schema(
         index: Number,
         name: { type: String, minlength: 3, required: true },
         password: { type: String, minlength:3, required: true },
+        published_articles: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Article'
+         }]
     },
     { timestamps: true }
 );
