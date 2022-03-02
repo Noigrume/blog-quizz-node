@@ -11,60 +11,28 @@
     </div>
 
   
-    <div class="row g-5">
-      <div class="col-md-8">
+    <div class="row ">
+      <div class="col-md-8 row">
         <h3 class="pb-4 mb-4 fst-italic border-bottom">
           Quelques articles
         </h3>
-      
-        <article class="blog-post">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-              <div class="col p-4 d-flex flex-column position-static">
-                <strong class="d-inline-block mb-2 text-primary">World</strong>
-                <h3 class="mb-0">Featured post</h3>
-                <div class="mb-1 text-muted">Nov 12</div>
-                <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="stretched-link">Continue reading</a>
-              </div>
-              <div class="col-auto d-none d-lg-block">
-                <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-      
-              </div>
-            </div>
-        </article>
 
+        <% for (const { index, title, description, date, picture } of articles) { %>
 
-        <article class="blog-post">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-              <div class="col p-4 d-flex flex-column position-static">
-                <strong class="d-inline-block mb-2 text-primary">World</strong>
-                <h3 class="mb-0">Featured post</h3>
-                <div class="mb-1 text-muted">Nov 12</div>
-                <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="stretched-link">Continue reading</a>
-              </div>
-              <div class="col-auto d-none d-lg-block">
-                <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-    
-              </div>
-            </div>
-        </article>
+          <article class="card col-lg-5 m-2 p-0">
+            <img src="https://images.unsplash.com/photo-1477862096227-3a1bb3b08330?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60" alt="" class="card-img-top">
+            <div class="card-body">
+              <strong class="d-inline-block mb-2 text-primary">Categorie</strong>
+              <h5 class="card-title"><%= title %></h5>
+              <div class="mb-1 text-muted"><%= date %></div>
+              <p class="card-text"><%= description %></p>
+             <a href="" class="btn btn-outline-success btn-sm">Read More</a>
+             <span id="delete" data-id="<%= index %>"><i class="fas fa-trash"></i></span>
 
-        <article class="blog-post">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-              <div class="col p-4 d-flex flex-column position-static">
-                <strong class="d-inline-block mb-2 text-primary">World</strong>
-                <h3 class="mb-0">Featured post</h3>
-                <div class="mb-1 text-muted">Nov 12</div>
-                <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="stretched-link">Continue reading</a>
-              </div>
-              <div class="col-auto d-none d-lg-block">
-                <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-      
-              </div>
+              <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
             </div>
-        </article>
+          </article>
+          <%}%>
   
       </div>
   

@@ -1,31 +1,22 @@
 
 <main class="container">
+    <div class="row">
     <% for (const { index, title, description, date, picture } of articles) { %>
-   
-        <article class="blog-post col-6">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-              <div class="col p-4 d-flex flex-column position-static">
+
+            <article class="card col-lg-4 m-2 p-0">
+              <img src="https://images.unsplash.com/photo-1477862096227-3a1bb3b08330?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60" alt="" class="card-img-top">
+              <div class="card-body">
                 <strong class="d-inline-block mb-2 text-primary">Categorie</strong>
-                <span id="delete" data-id="<%= index %>"><i class="fas fa-trash"></i></span>
-
-                <h3 class="mb-0"><%= title %></h3>
+                <h5 class="card-title"><%= title %></h5>
                 <div class="mb-1 text-muted"><%= date %></div>
-                <p class="card-text mb-auto"><%= description %></p>
- 
-              </div>
-              <div class="col-auto d-none d-lg-block">
-                <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-      
-              </div>
-            </div>
-        </article>
+                <p class="card-text"><%= description %></p>
+               <a href="" class="btn btn-outline-success btn-sm">Read More</a>
+               <span id="delete" data-id="<%= index %>"><i class="fas fa-trash"></i></span>
 
-        <!-- <div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
-            <div class="card-header"><%= title %></div>
-            <div class="card-body">
-              <h4 class="card-title"><%= title %></h4>
-              <p class="card-text"><%= description %></p>
-            </div> -->
+                <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
+              </div>
+            </article>
+     
 
 <!--      
         <div class="kittenCtn">
@@ -54,4 +45,5 @@
         </div> -->
 
     <%}%>
+    </div>
 </main>
