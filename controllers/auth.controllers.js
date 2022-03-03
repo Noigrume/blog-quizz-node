@@ -1,5 +1,6 @@
 import { createUser, getUserByAlias } from "../queries/auth.queries.js";
 import jwt from "jsonwebtoken";
+import { allArticles } from "./articles.controllers.js";
 
 export const createSession = async (req, res) => {
     try {

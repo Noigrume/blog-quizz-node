@@ -8,6 +8,10 @@ const ArticleSchema = Schema(
         date: { type: Date, default: Date.now() },
         picture: { type: String, default: "no-picture.png" },
         description: { type: String, required: true },
+        category_id: {
+            type: Schema.Types.ObjectId,
+            ref: 'Categorie'
+        },
         user_id: {
             type: Schema.Types.ObjectId,
             ref: 'User'

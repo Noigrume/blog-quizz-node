@@ -7,7 +7,7 @@ const QuizzEvaluationSchema = Schema(
         label: { type: String, minlength: 2, required: true },
         date: { type: Date, default: Date.now() },
         note: { type: Number, required: false },
-        description: { type: Sring, required: true },
+        description: { type: String, required: true },
         article_id: {
             type: Schema.Types.ObjectId,
             ref: 'Article'

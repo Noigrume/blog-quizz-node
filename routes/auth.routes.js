@@ -7,6 +7,10 @@ import {
     newUser
 } from "../controllers/auth.controllers.js";
 
+import {
+    allArticles,
+} from "../controllers/articles.controllers.js";
+
 router.all("/register", newUser);
 router.all("/login", createSession);
 router.get("/logout", deleteSession);

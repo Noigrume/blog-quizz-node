@@ -4,7 +4,8 @@ import { dirname } from "path";
 import { fileURLToPath } from "url";
 
 import authRoutes from "./auth.routes.js";
-import articlesRoutes from "./articles.routes.js";
+import articlesRoutes from "./articles.routes.js"; 
+import categoriesRoutes from "./categories.routes.js";
 
 import authMiddleware from "../middlewares/auth.js";
 
@@ -17,13 +18,15 @@ router.use((req, res, next) => {
 });
 
 router.use("/auth", authRoutes);
-router.use("/articles", articlesRoutes);
+router.use("/article", articlesRoutes);
+
+router.use("/categorie", categoriesRoutes);
 
 router.get("/admin", authMiddleware, (req, res) => {
     res.render("layout", { template: "admin" });
 });
 
-router.get("/", (req, res) => {
+router.get("/article", (req, res) => {
     res.render("layout", { template: "home" });
 });
 

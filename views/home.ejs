@@ -27,9 +27,9 @@
               <div class="mb-1 text-muted"><%= date %></div>
               <p class="card-text"><%= description %></p>
              <a href="" class="btn btn-outline-success btn-sm">Read More</a>
-             <span id="delete" data-id="<%= index %>"><i class="fas fa-trash"></i></span>
+             <!-- <a href="/delete/<%= index %>" id="delete" data-id="<%= index %>"><i class="fas fa-trash"></i></a> -->
 
-              <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
+              <a href="/article/delete/<%= index %>" id="delete" class="btn btn-outline-danger btn-sm"><i class="far fa-trash"></i></a>
             </div>
           </article>
           <%}%>

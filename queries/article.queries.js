@@ -8,6 +8,10 @@ export const getOneArticle = (id) => {
     return Article.findOne({ index: { $eq: id } });
 };
 
+export const getOneQuizz = (id) => {
+    return Article.findOne({ index: { $eq: id } });
+};
+
 export const saveOneArticle = (newArticle) => {
     return newArticle.save();
 };

@@ -4,14 +4,36 @@ import {
     getOneArticle,
     updateOneArticle,
     saveOneArticle,
+    getOneQuizz,
 } from "../queries/article.queries.js";
+
+import {
+    getAllCategories,
+
+} from "../queries/categorie.queries.js";
 
 import { Article } from "../database/models/article.model.js";
 
 export const allArticles = async (req, res) => {
     try {
         const articles = await getAllArticles();
-        res.render("layout", { template: "list", articles: articles });
+        res.render("layout", { template: "home", articles: articles });
+    } catch (err) {
+        console.log(err);
+    }
+};
+
+export const oneQuizz = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const article = await getOneQuizz(id);
+        const { label } = quizz;
+        res.render("layout", {
+            template: "detail",
+            quizz: {
+                label: label,
+            },
+        });
     } catch (err) {
         console.log(err);
     }
@@ -21,15 +43,15 @@ export const oneArticle = async (req, res) => {
     try {
         const { id } = req.params;
         const article = await getOneArticle(id);
-        const { name, age, available, picture } = article;
+        const { index, title, date,description, picture } = article;
         res.render("layout", {
             template: "detail",
             article: {
-                dispo: available ? "oui" : "non",
-                name: name,
-                age: age,
-                available: available,
+                index:id,
+                title : title,
+                date: date,
                 picture: picture,
+                description: description,
             },
         });
     } catch (err) {
@@ -43,7 +65,7 @@ export const saveArticle = async (req,res) => {
 
     const newArticle = new Article({
         ...body,
-        available: body.isAvailable ? true : false,
+        category_id: body.category,
     });
 
     await saveOneArticle(newArticle)
@@ -68,7 +90,7 @@ export const delArticle = async (req, res) => {
     try {
         const { id } = req.params;
         await deleteOneArticle(id);
-        res.redirect(303, "/");
+        res.redirect(303, "/article");
     } catch (err) {
         console.log(err);
     }

@@ -9,10 +9,27 @@ import {
     delArticle,
 } from "../controllers/articles.controllers.js";
 
-router.get("/all", allArticles);
+import {
+    oneQuizz,
+    saveQuizz,
+    updateQuizz,
+    delQuizz,
+} from "../controllers/quizz.controllers.js";
+
+
+/****************************************** ROUTES ARTICLES********************************************************************/
+router.get("/", allArticles);
 router.get("/:id", oneArticle);
 router.post("/save", saveArticle);
 router.patch("/update/:id", updateArticle);
 router.delete("/delete/:id", delArticle);
+
+/****************************************** ROUTES QUIZZ********************************************************************/
+
+router.get('/:id/quizz',oneQuizz);
+router.post("/save", saveQuizz);
+router.patch("/update/:id", updateQuizz);
+router.delete("/delete/:id", delQuizz);
+
 
 export default router;
