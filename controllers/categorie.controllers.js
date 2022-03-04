@@ -10,13 +10,22 @@ import { Categorie } from "../database/models/categorie.model.js";
 
 export const allCategories = async (req, res) => {
     try {
-        const categorie = await getAllCategories();
-        res.render("layout", { template: "home", categories: categories });
+        const categories = await getAllCategories();
+        res.render("layout", { template: "categories", categories: categories });
     } catch (err) {
         console.log(err);
     }
 };
 
+export const newCategorieTemplate = async (req, res) => {
+    try {
+        res.render("layout", {
+            template: "new_categorie",
+        });
+    } catch (err) {
+        console.log(err);
+    }
+};
 
 export const saveCategorie = async (req, res) => {
     try {
