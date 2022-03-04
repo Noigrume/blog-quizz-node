@@ -7,14 +7,18 @@ const QuizzEvaluationSchema = Schema(
         label: { type: String, minlength: 2, required: true },
         date: { type: Date, default: Date.now() },
         note: { type: Number, required: false },
+        user: {
+            type: Schema.Types.ObjectId,
+            ref: 'user'
+        },
         description: { type: String, required: true },
         article_id: {
             type: Schema.Types.ObjectId,
-            ref: 'Article'
+            ref: 'article'
         },
         related_questions: [{
             type: Schema.Types.ObjectId,
-            ref: 'QuizzQuestion'
+            ref: 'quizz_question'
          }]
     },
     { timestamps: true }

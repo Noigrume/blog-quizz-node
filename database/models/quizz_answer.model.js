@@ -8,7 +8,7 @@ const QuizzAnswerSchema = Schema(
         checked: { type: bool, required:true },
         quizz_question: {
             type: Schema.Types.ObjectId,
-            ref: 'QuizzQuestion'
+            ref: 'quizz_question'
         },
     },
     { timestamps: true }

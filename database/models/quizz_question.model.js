@@ -9,11 +9,11 @@ const QuizzQuestionSchema = Schema(
         succeded: { type: bool, required: false },
         quizz_id: {
             type: Schema.Types.ObjectId,
-            ref: 'QuizzEvaluation'
+            ref: 'quizz_evaluation'
         },
         quizz_answers: [{
             type: Schema.Types.ObjectId,
-            ref: 'QuizzAnswer'
+            ref: 'quizz_answer'
          }]
     },
     { timestamps: true }

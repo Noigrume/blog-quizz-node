@@ -22,7 +22,7 @@ const UserSchema = Schema(
             minlength: 6,
             required: [true, 'Mot de passe obligatoire']
          },
-        published_articles: [{
+        articles: [{
             type: Schema.Types.ObjectId,
             ref: 'Article'
         }]

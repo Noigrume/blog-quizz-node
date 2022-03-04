@@ -8,17 +8,17 @@ const ArticleSchema = Schema(
         date: { type: Date, default: Date.now() },
         picture: { type: String, default: "no-picture.png" },
         description: { type: String, required: true },
-        category_id: {
+        category: {
             type: Schema.Types.ObjectId,
-            ref: 'Categorie'
+            ref: 'categorie'
         },
-        user_id: {
+        author: {
             type: Schema.Types.ObjectId,
-            ref: 'User'
+            ref: 'user'
         },
         related_quizz: [{
             type: Schema.Types.ObjectId,
-            ref: 'QuizzEvaluation'
+            ref: 'quizz_evaluation'
          }]
     },
     { timestamps: true }
