@@ -5,6 +5,7 @@ import {
     updateOneArticle,
     saveOneArticle,
     getOneQuizz,
+
 } from "../queries/article.queries.js";
 
 import {
@@ -17,7 +18,7 @@ import { Article } from "../database/models/article.model.js";
 export const allArticles = async (req, res) => {
     try {
         const articles = await getAllArticles();
-        res.render("layout", { template: "home", articles: articles });
+        res.render("layout", { template: "list", articles: articles });
     } catch (err) {
         console.log(err);
     }
@@ -33,6 +34,19 @@ export const oneQuizz = async (req, res) => {
             quizz: {
                 label: label,
             },
+        });
+    } catch (err) {
+        console.log(err);
+    }
+};
+
+
+export const newArticleTemplate = async (req, res) => {
+    try {
+        const categories = getAllCategories;
+        res.render("layout", {
+            template: "new_article",
+            categories: categories,
         });
     } catch (err) {
         console.log(err);
@@ -65,7 +79,7 @@ export const saveArticle = async (req,res) => {
 
     const newArticle = new Article({
         ...body,
-        category_id: body.category,
+      //  category_id: body.category,
     });
 
     await saveOneArticle(newArticle)
