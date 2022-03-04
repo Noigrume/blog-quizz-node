@@ -20,6 +20,7 @@ export const allQuizzs = async (req, res) => {
 
 
 export const oneQuizz = async (req, res) => {
+
     try {
         const { id } = req.params;
         const quizz = await getOneQuizz(id);
