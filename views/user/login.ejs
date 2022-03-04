@@ -1,23 +1,41 @@
-
-<main id="connect" role="main">
+<main id="connect" role="main" class="container">
 
 
     <% if (error) { %>
-        <p><%= error %></p>
-    <% } %>
-    <form action="/auth/login" method="post">
-        <legend>Login</legend>
-        <label for="alias">
-            <input type="text" name="alias" id="alias" placeholder="your name" aria-placeholder="your name">
-        </label>
-        <label for="pwd">
-            <input type="password" name="pwd" id="pwd" placeholder="your password" aria-placeholder="your password" autocomplete="off">
-        </label>
+        <p>
+            <%= error %>
+        </p>
+        <% } %>
+            <form action="/auth/login" method="post">
+                <legend>Se connecter</legend>
 
-        <input type="submit" value="send">
+                <label for="alias">
+                    <input type="text" name="alias" id="alias" placeholder="your name" aria-placeholder="your name">
+                </label>
 
-    </form>
-    <a href="/auth/register">Or register</a>
+                <label for="pwd">
+                    <input type="password" name="pwd" id="pwd" placeholder="your password"
+                        aria-placeholder="your password" autocomplete="off">
+                </label>
+
+                <input type="submit" value="send">
+
+            </form>
+
+            <!-- <form class="form-signin" action="/auth/login" method="post">
+                <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+
+                <label for="alias" class="sr-only">Email address</label>
+                <input type="text" id="alias" class="form-control" placeholder="Nom" required autofocus>
+
+                <label for="pwd" class="sr-only">Password</label>
+                <input type="password" id="pwd" class="form-control" placeholder="Password" required>
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit" value="send">Sign in</button>
+            </form> -->
+
+            <a href="/auth/register">Ou créer un compte
+            </a>
 
 
 </main>

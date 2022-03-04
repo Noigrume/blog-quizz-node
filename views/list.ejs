@@ -1,49 +1,80 @@
-
 <main class="container">
-    <div class="row">
-    <% for (const { index, title, description, date, picture } of articles) { %>
 
-            <article class="card col-lg-4 m-2 p-0">
-              <img src="https://images.unsplash.com/photo-1477862096227-3a1bb3b08330?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=60" alt="" class="card-img-top">
-              <div class="card-body">
-                <strong class="d-inline-block mb-2 text-primary">Categorie</strong>
-                <h5 class="card-title"><%= title %></h5>
-                <div class="mb-1 text-muted"><%= date %></div>
-                <p class="card-text"><%= description %></p>
-               <a href="" class="btn btn-outline-success btn-sm">Read More</a>
-               <span id="delete" data-id="<%= index %>"><i class="fas fa-trash"></i></span>
+    <div class="p-5 p-md-5 mb-4 text-white rounded bg-dark jumbotron jumbotron-fluid">
+        <div class="col-md-6 px-0">
+            <h1 class="display-4 fst-italic">Mon blog</h1>
+            <p class="lead my-3">Maecenas venenatis varius odio id tempor. Nulla tincidunt rhoncus est, quis dictum
+                augue mattis ac. Mauris vel orci urna. Nullam aliquam dignissim risus, quis vestibulum tellus lacinia
+                in. Aenean quis ex vel augue ultricies sagittis. Donec quis accumsan lectus. Morbi nulla metus, interdum
+                sit amet porta nec, rutrum iaculis elit. Morbi consectetur justo bibendum, aliquam libero sed, venenatis
+                nulla. Sed mi dui, commodo at pellentesque faucibus, vulputate et mauris. Proin eu laoreet dolor, eget
+                maximus justo. </p>
 
-                <a href="" class="btn btn-outline-danger btn-sm"><i class="far fa-heart"></i></a>
-              </div>
-            </article>
-     
-
-<!--      
-        <div class="kittenCtn">
-            <div class="mod">
-                <span
-                    id="update"
-                    data-id="<%= index %>"
-                    data-name="<%= title %>"
-                    data-age="<%= date %>"
-                    data-picture="<%= picture %>"
-                    ><i class="fas fa-edit"></i
-                ></span>
-
-                <span id="delete" data-id="<%= index %>"
-                    ><i class="fas fa-trash"></i
-                ></span>
-            </div>
-            <a href="/articles/<%= index %>">
-                <ul>
-                    <li><%= title %></li>
-                    <li><%= date %> an(s)</li>
-
-                </ul>
-                <img src="../images/<%= picture %>" alt="" />
-            </a>
-        </div> -->
-
-    <%}%>
+        </div>
     </div>
+
+
+    <div class="row ">
+        <div class="col-md-8 row">
+            <h3 class="pb-4 mb-4 fst-italic border-bottom">
+                Quelques articles
+            </h3>
+
+            <% for (const { index, title, description, date, picture } of articles) { %>
+
+                <article class="card col-lg-5 m-2 p-0">
+                    <img src="https://picsum.photos/200/100"
+                        alt="" class="card-img-top">
+                    <div class="card-body">
+                        <strong class="d-inline-block mb-2 text-primary">Categorie</strong>
+                        <h5 class="card-title">
+                            <%= title %>
+                        </h5>
+                        <div class="mb-1 text-muted">
+                            <%= date %>
+                        </div>
+                        <p class="card-text">
+                            <%= description %>
+                        </p>
+                        <% if(alias) { %>
+                            <a href="/article/<%= index %>" class="btn btn-outline-success btn-sm">Read More</a>
+
+                            <a href="/article/delete/<%= index %>" class="btn btn-outline-danger btn-sm">
+                                <button>X</button>
+
+                            </a>
+                            <% } %>
+                    </div>
+                </article>
+                <%}%>
+
+        </div>
+
+        <div class="col-md-4">
+            <div class="position-sticky" style="top: 2rem;">
+                <div class="p-4 mb-3 bg-light rounded">
+                    <h4 class="fst-italic">About</h4>
+                    <p class="mb-0">Vivamus congue magna non lorem interdum, eu viverra augue varius. Phasellus suscipit
+                        malesuada faucibus. Proin dictum scelerisque velit, quis blandit nisl. Mauris faucibus
+                        ullamcorper augue,
+                        ultrices iaculis purus malesuada eu. Praesent viverra lacus sed eleifend maximus. Proin ac lacus
+                        aliquam,
+                        fringilla sem in, tincidunt ligula. Nullam non tincidunt purus. Sed tincidunt turpis a facilisis
+                        pellentesque. </p>
+                </div>
+
+                <div class="p-4">
+                    <h4 class="fst-italic">Catégories</h4>
+                    <ol class="list-unstyled mb-0">
+                        <li><a href="#">Catégorie 1</a></li>
+                        <li><a href="#">Catégorie 2</a></li>
+                        <li><a href="#">Catégorie 3</a></li>
+                    </ol>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
 </main>

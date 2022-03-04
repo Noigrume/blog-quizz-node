@@ -1,12 +1,15 @@
 
 
 <main class="container">
-    <div class="kittenCtn">
-        <h2><%= article.title %></h2>
-        <p><%= article.description %></p>
-        <p><%= article.date %></p>
-        <!-- <img src="../images/<%= article.picture %>" alt=""/> -->
-    </div>
 
-    <button>Accéder au quizz</button>
+    <div class="card">
+        <img class="card-img-top" src="https://picsum.photos/500/100" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%= article.title %></h5>
+          <p><%= article.date %></p>
+          <p class="card-text"><%= article.description %></p>
+          <button>Accéder au quizz</button>
+        </div>
+      </div>
+
 </main>

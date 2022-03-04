@@ -4,22 +4,25 @@
       style="top: 2rem;">
       <a href="/" class="p-2 link-secondary <%= template === 'home' ? " active" : null %>">home</a>
       <p>.</p>
+      <a href="/article" class="p-2 link-secondary <%= template === 'list' ? " active" : null %>">blog</a>
+      <p>.</p>
       <% if(alias) { %>
         <a href="/admin" class="p-2 link-secondary <%= template === 'admin' ? " active" : null %>">admin</a>
-        
+
         <a href="/auth/logout" class="p-2 link-secondary <%= template === 'user/connect' ? " active" : null
           %>">logout</a>
         <% } %>
           <% if(!alias) { %>
-            <p>.</p>
+
             <a href="/auth/login" class="p-2 link-secondary <%= template === 'user/connect' ? " active" : null
-              %>">login</a>
+              %>">Connexion</a>
             <p>.</p>
-            <a href="/auth/register" class="p-2 link-secondary">Register</a>
+            <a href="/auth/register" class="p-2 link-secondary">Créer un compte</a>
             <% } %>
               <p>
                 <% if (alias) { %>
-                  <p>Salut <%= alias %>
+                  <p class="border m-1 p-1">User : <br>
+                     <%= alias %>
                   </p>
                   <% } %>
               </p>
