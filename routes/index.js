@@ -26,7 +26,7 @@ router.get("/admin", authMiddleware, (req, res) => {
     res.render("layout", { template: "admin" });
 });
 
-router.get("/article", (req, res) => {
+router.get("/", (req, res) => {
     res.render("layout", { template: "home" });
 });
 

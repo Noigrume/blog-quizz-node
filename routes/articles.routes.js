@@ -7,29 +7,39 @@ import {
     saveArticle,
     updateArticle,
     delArticle,
+    
+    newArticleTemplate,
 } from "../controllers/articles.controllers.js";
 
 import {
     oneQuizz,
     saveQuizz,
-    updateQuizz,
-    delQuizz,
 } from "../controllers/quizz.controllers.js";
 
 
-/****************************************** ROUTES ARTICLES********************************************************************/
+
+/******************************************    ROUTES ARTICLES   *****************************************************************/
 router.get("/", allArticles);
+
+router.get("/new", newArticleTemplate)
+// router.get('/new', function(req, res){
+ 
+//     res.render('home');
+// })
+ 
 router.get("/:id", oneArticle);
+
+
+//router.get("/new", newArticleTemplate)
 router.post("/save", saveArticle);
 router.patch("/update/:id", updateArticle);
 router.delete("/delete/:id", delArticle);
 
-/****************************************** ROUTES QUIZZ********************************************************************/
+/******************************************    ROUTES QUIZZ   ********************************************************************/
 
-router.get('/:id/quizz',oneQuizz);
-router.post("/save", saveQuizz);
-router.patch("/update/:id", updateQuizz);
-router.delete("/delete/:id", delQuizz);
+router.get('/:id/quizz',oneQuizz); //pour voir le quizz d'un article
+router.post("/:id/quizz/save", saveQuizz); // enregistre un quizz lié à l'id d'un article
+//router.delete("/delete/:id", delQuizz);
 
 
 export default router;
